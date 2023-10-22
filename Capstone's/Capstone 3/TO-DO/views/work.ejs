@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO LIST</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div>
+    <ul class="flex">
+
+      <li>
+      <a href="/" class="nav">Today</a>
+      </li>
+      <li>
+        <a href="/work" class="nav">Work</a>
+      </li>
+
+
+    </ul>
+  </div>
+  <div class="h1">
+    <h1>WORK-LIST</h1> 
+  </div>
+
+<ul class="tasks">
+  
+     <% for(j=0;j<newWorkItems.length;j++){%>
+      <li ><input type="checkbox" class="checkbox"><%= newWorkItems[j] %></li>
+       <%}%>
+    
+       <form action="/work" method="POST">
+        <input type="text" name="newTask" placeholder="Enter a task" />
+        <input type="submit" value="+" />
+      </form>
+</ul>   
+
+
+<footer>
+   <p>Copyright ©  <%= new Date().getFullYear() %></p>
+</footer>
+</body>
+
+
+</html>

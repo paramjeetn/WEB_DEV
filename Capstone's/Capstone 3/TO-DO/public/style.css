@@ -1,0 +1,64 @@
+body {
+    margin-top:2em;
+    background-color: lightblue;
+}
+
+ul {
+    list-style: none;
+}
+
+.flex {
+    display: flex;  
+    
+}
+.nav{
+    font-size:1.5rem;
+    margin-right:5rem;
+    text-decoration: none;
+    color: #a683e3;
+}
+.tasks{
+    max-width: 400px;
+    min-width: 20vw;
+    margin: 50px auto;
+    margin-top:2rem;
+    min-height: 70px;   
+    align-items: center;
+    border-bottom: 1px solid #f1f1f1;
+    background-color: white;
+    border-radius:5px;
+}
+
+input{
+    border:none;
+    padding:none;
+}
+input[value]{ 
+    font-size:1.5rem;
+width:3rem;
+height:3rem;
+border-radius:50%;
+background-color: #a683e3;;
+}
+.single{
+    margin-top:2rem;
+    margin-bottom:2rem;
+    
+}
+.h1 {
+    max-width: 400px;
+    min-width: 20vw;
+    margin: 50px auto;
+    border-radius: 5px;
+    border-style: none;
+    background-color: #a683e3;
+    text-align: center;
+    height:3rem;
+    
+
+}
+
+.checkbox {
+    margin-right:1.5rem;
+}
+
