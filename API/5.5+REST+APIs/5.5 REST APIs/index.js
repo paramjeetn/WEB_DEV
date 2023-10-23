@@ -42,7 +42,7 @@ app.post("/post-secret", async (req, res) => {
       id:searchId,
       secret:secrets,
       emScore:score,
-    }); 
+    },config); 
     res.render("index.ejs", { content: JSON.stringify(result.data) });
   } catch (error) {
     res.render("index.ejs", { content: JSON.stringify(error.response.data) });
@@ -55,11 +55,7 @@ app.post("/put-secret", async (req, res) => {
   const secrets = req.body.secret;
   const score= req.body.score;
   try {
-    const result = await axios.put(API_URL + "/secrets/", {
-      id:searchId,
-      secret:secrets,
-      emScore:score,
-    }); 
+    const result = await axios.put(API_URL + "/secrets/"+searchId,req.body,config); 
     res.render("index.ejs", { content: JSON.stringify(result.data) });
   } catch (error) {
     res.render("index.ejs", { content: JSON.stringify(error.response.data) });
@@ -72,11 +68,7 @@ app.post("/patch-secret", async (req, res) => {
   const secrets = req.body.secret;
   const score= req.body.score;
   try {
-    const result = await axios.patch(API_URL + "/secrets/", {
-      id:searchId,
-      secret:secrets,
-      emScore:score,
-    }); 
+    const result = await axios.patch(API_URL + "/secrets/"+searchId,req.body,config); 
     res.render("index.ejs", { content: JSON.stringify(result.data) });
   } catch (error) {
     res.render("index.ejs", { content: JSON.stringify(error.response.data) });
@@ -87,9 +79,7 @@ app.post("/patch-secret", async (req, res) => {
 app.post("/delete-secret", async (req, res) => {
   const searchId = req.body.id;
   try {
-    const result = await axios.delete(API_URL + "/secrets/", {
-      id:searchId,
-       }); 
+    const result = await axios.delete(API_URL + "/secrets/"+searchId,config); 
     res.render("index.ejs", { content: JSON.stringify(result.data) });
   } catch (error) {
     res.render("index.ejs", { content: JSON.stringify(error.response.data) });
