@@ -6,64 +6,116 @@
     <title>Guess It</title>
     <style>
         body {
-  min-height: 150vh;
-  background: #212534;
+  min-height: 100vh;
+  background: lightseagreen;
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 5rem;
+  padding-bottom: rem;
   box-sizing: border-box;
 }
-.riddleBox{
-    max-height:30vh;
-    background: yellow;
+.container{
+    max-height:80vh;
+    max-width: 80vw;
+    background: #b7d7e8;
     display: flex;
     align-items: center;
-    padding-top: 5rem;
+    padding-top: 10rem;
   padding-bottom: 5rem;
   box-sizing: border-box;
   border-radius: 10px;
+} 
+
+.riddleBox{
+    max-height:30vh;
+    background: #b7d7e8;
+    align-items: center;
+  padding-bottom: 5rem;
 }
 .answer{
-    color:white;
+ color:black;
 }
 .riddle{
-    padding:5px;
+    font-size:20px;
 }
 .newRiddle{
     background: red;
     border: none;
     border-radius: 3px;
+    font-size:25px;
+    
+    width:100%
     
 }
-    </style>
+.hidden{
+    display:none;
+}
+.view-answer{
+    max-height:30vh;
+    min-height:15vh;
+    width:100%;
+    font-size:20px;
+    background: #cfe0e8;
+    
+    text-align: center;
+    align-items: center;
+    
+    margin-top:2.5rem;
+    margin-bottom:1rem;
+  box-sizing: border-box;
   
+  border:2px solid black;
+  border-left:none;
+  border-right:none
+ 
+
+}
+hr {
+        width: 100%;
+        height: 3px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: black;
+      }
+p,h1{
+    text-align: center;
+}
+    </style>
+   
+
 </head>
 <body>
     <div class="container">
-<!--response area-->
+    <div >
+    <!--response area-->
+    <hr>
         <div class="riddleBox">
+            <p><h1>RIDDLE</h1></p>
+             <br>
             <p class="riddle">
+                
                <%=content.riddle%>
             </p>
         </div>
-
+<hr>
 <!--answer-->
 
-<div class="view-answer">
-    <p class="answer ">
-        Answer: <%=content.answer%>
+<button class="view-answer"  onclick="document.querySelector(`.answer`).classList.remove(`hidden`);document.querySelector(`.clickforans`).classList.add(`hidden`)">
+    <p class="clickforans">Click For Answer:</p>
+    <p class="answer hidden ">
+         <%=content.answer%>
     </p>  
     
-</div>
+</button>
 
 
 <!--New Riddle-->
 <div> 
-    <button class="newRiddle" type="submit"  onclick="window.location.href='/'">New One</button>
+    <button class="newRiddle" type="submit"  onclick="window.location.href='/'">Another Riddle</button>
 </div>
 
+</div>
 </div>
     
 </body>
