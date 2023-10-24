@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Guess It</title>
+    <style>
+        body {
+  min-height: 150vh;
+  background: #212534;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+}
+.riddleBox{
+    max-height:30vh;
+    background: yellow;
+    display: flex;
+    align-items: center;
+    padding-top: 5rem;
+  padding-bottom: 5rem;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.answer{
+    color:white;
+}
+.riddle{
+    padding:5px;
+}
+.newRiddle{
+    background: red;
+    border: none;
+    border-radius: 3px;
+    
+}
+    </style>
+  
+</head>
+<body>
+    <div class="container">
+<!--response area-->
+        <div class="riddleBox">
+            <p class="riddle">
+               <%=content.riddle%>
+            </p>
+        </div>
+
+<!--answer-->
+
+<div class="view-answer">
+    <p class="answer ">
+        Answer: <%=content.answer%>
+    </p>  
+    
+</div>
+
+
+<!--New Riddle-->
+<div> 
+    <button class="newRiddle" type="submit"  onclick="window.location.href='/'">New One</button>
+</div>
+
+</div>
+    
+</body>
+</html>
